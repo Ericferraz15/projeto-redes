@@ -1,0 +1,47 @@
+========================================================
+TESTES REALIZADOS
+Projeto Integrador de Redes - Grupo 5 (VideCoders)
+========================================================
+
+OBS.: Preencha os resultados de cada teste e indique o
+print correspondente em packet-tracer/screenshots/.
+
+
+--------------------------------------------------------
+TESTE 1 - Topologia montada
+--------------------------------------------------------
+Descrição : Montagem completa da rede no Packet Tracer.
+Evidência : packet-tracer/screenshots/topologia.png
+Resultado : [ OK / FALHOU ]
+Observações:
+
+
+--------------------------------------------------------
+TESTE 2 - Ping do cliente para o servidor
+--------------------------------------------------------
+Comando   : ping 10.0.0.2
+Origem    : PC-Cliente (192.168.1.x)
+Destino   : Servidor (10.0.0.2)
+Evidência : packet-tracer/screenshots/ping-servidor.png
+Resultado : [ OK / FALHOU ]
+Observações:
+
+
+--------------------------------------------------------
+TESTE 3 - Acesso à página web (HTTP)
+--------------------------------------------------------
+Ação      : Abrir o navegador do cliente e acessar o servidor web.
+Endereço  : http://10.0.0.2
+Evidência : packet-tracer/screenshots/acesso-web.png
+Resultado : [ OK / FALHOU ]
+Observações:
+
+
+--------------------------------------------------------
+RESUMO
+--------------------------------------------------------
+Total de testes : 3
+Aprovados       :
+Reprovados      :
+Data dos testes :
+Responsável     : Eric Ferraz (infraestrutura de rede)

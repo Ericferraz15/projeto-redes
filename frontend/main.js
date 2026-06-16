@@ -5,19 +5,21 @@ const path = require('path');
 const server = http.createServer((req, res) => {
     let filePath = req.url === '/' ? './index.html' : '.' + req.url;
     
-    // Identifica qual é a extensão do arquivo
     const extname = String(path.extname(filePath)).toLowerCase();
     
-    // Dicionário de tipos de conteúdo para o navegador entender o que está recebendo
     const mimeTypes = {
         '.html': 'text/html',
         '.js': 'text/javascript',
-        '.css': 'text/css'
+        '.css': 'text/css',
+        '.png': 'image/png',
+        '.jpg': 'image/jpeg',
+        '.jpeg': 'image/jpeg',
+        '.svg': 'image/svg+xml',
+        '.ico': 'image/x-icon'
     };
 
     const contentType = mimeTypes[extname] || 'application/octet-stream';
 
-    // Lê e entrega o arquivo
     fs.readFile(filePath, (error, content) => {
         if (error) {
             res.writeHead(404, { 'Content-Type': 'text/plain' });

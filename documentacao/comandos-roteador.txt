@@ -1,0 +1,72 @@
+========================================================
+COMANDOS DE CONFIGURAÇÃO DO ROTEADOR (Cisco Packet Tracer)
+Projeto Integrador de Redes - Grupo 5 (VideCoders)
+Equipamento: Router0 (Cisco ISR4331)
+========================================================
+
+Topologia:
+- LAN Clientes  : 192.168.1.0/24  (interface Gig0/0/0 -> 192.168.1.1)
+- Rede Servidor : 10.0.0.0/24     (interface Gig0/0/1 -> 10.0.0.1)
+
+OBS.: Os computadores clientes (PC0/PC1) e o servidor usam
+endereçamento IP ESTÁTICO, portanto NÃO foi configurado DHCP
+no roteador. As senhas abaixo são exemplos (ajuste se necessário).
+
+
+--------------------------------------------------------
+1) ACESSO E NOME DO ROTEADOR
+--------------------------------------------------------
+enable
+configure terminal
+hostname Router0
+no ip domain-lookup
+
+
+--------------------------------------------------------
+2) SENHAS DE ACESSO (opcional)
+--------------------------------------------------------
+enable secret classe123
+line console 0
+ password cisco123
+ login
+ exit
+line vty 0 4
+ password cisco123
+ login
+ exit
+
+
+--------------------------------------------------------
+3) CONFIGURAÇÃO DAS INTERFACES
+--------------------------------------------------------
+! Interface conectada à LAN dos clientes (Switch0 -> PCs)
+interface GigabitEthernet0/0/0
+ description LAN-CLIENTES
+ ip address 192.168.1.1 255.255.255.0
+ no shutdown
+ exit
+
+! Interface conectada à rede do servidor (Maquina 01)
+interface GigabitEthernet0/0/1
+ description REDE-SERVIDOR
+ ip address 10.0.0.1 255.255.255.0
+ no shutdown
+ exit
+
+
+--------------------------------------------------------
+4) SALVAR A CONFIGURAÇÃO
+--------------------------------------------------------
+end
+copy running-config startup-config
+
+
+========================================================
+RESUMO DO ENDEREÇAMENTO (referência rápida)
+========================================================
+PC0          : 192.168.1.10  /24  GW 192.168.1.1  DNS 10.0.0.10
+PC1          : 192.168.1.11  /24  GW 192.168.1.1  DNS 10.0.0.10
+Router Gig0/0/0 : 192.168.1.1  /24
+Router Gig0/0/1 : 10.0.0.1     /24
+Servidor     : 10.0.0.10     /24  GW 10.0.0.1     DNS 10.0.0.10
+DNS          : www.meuprojeto.com -> 10.0.0.10

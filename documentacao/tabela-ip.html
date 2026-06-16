@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<title>Tabela de Endereçamento IP - Grupo 5</title>
+<style>
+  @page { size: A4 portrait; margin: 16mm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #222;
+    margin: 0;
+    font-size: 12.5px;
+  }
+  .cabecalho {
+    border-left: 8px solid #e67e22;
+    background: #2c3e50;
+    color: #fff;
+    padding: 14px 18px;
+    border-radius: 6px;
+  }
+  .cabecalho h1 { margin: 0 0 4px; font-size: 20px; }
+  .cabecalho p  { margin: 0; font-size: 12px; color: #cfd8dc; }
+  h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #e67e22;
+    padding-bottom: 4px;
+    margin: 24px 0 10px;
+    font-size: 15px;
+  }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { border: 1px solid #b0b0b0; padding: 7px 9px; text-align: left; }
+  th { background: #34495e; color: #fff; font-weight: 600; }
+  tbody tr:nth-child(even) { background: #f4f6f8; }
+  td.centro, th.centro { text-align: center; }
+  .obs { margin-top: 20px; font-size: 11.5px; }
+  .obs li { margin-bottom: 4px; }
+  .rodape { margin-top: 26px; font-size: 10.5px; color: #777; text-align: center; }
+  code { background: #eef1f3; padding: 1px 5px; border-radius: 3px; }
+</style>
+</head>
+<body>
+
+  <div class="cabecalho">
+    <h1>Tabela de Endereçamento IP</h1>
+    <p>Grupo 5 — VideCoders &nbsp;|&nbsp; Projeto Integrador de Redes</p>
+  </div>
+
+  <h2>1. Redes utilizadas</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Rede</th>
+        <th>Endereço de rede</th>
+        <th>Máscara (CIDR)</th>
+        <th>Gateway padrão</th>
+        <th>Finalidade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>LAN Clientes</td>
+        <td>192.168.1.0</td>
+        <td>255.255.255.0 (/24)</td>
+        <td>192.168.1.1</td>
+        <td>Computadores dos clientes</td>
+      </tr>
+      <tr>
+        <td>Rede do Servidor</td>
+        <td>10.0.0.0</td>
+        <td>255.255.255.0 (/24)</td>
+        <td>10.0.0.1</td>
+        <td>Servidor Web + DNS</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>2. Endereçamento dos dispositivos</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Dispositivo</th>
+        <th>Interface</th>
+        <th>Endereço IP</th>
+        <th>Máscara de sub-rede</th>
+        <th>Gateway</th>
+        <th>Servidor DNS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>PC0</td>
+        <td>FastEthernet0</td>
+        <td>192.168.1.10</td>
+        <td>255.255.255.0</td>
+        <td>192.168.1.1</td>
+        <td>10.0.0.10</td>
+      </tr>
+      <tr>
+        <td>PC1</td>
+        <td>FastEthernet0</td>
+        <td>192.168.1.11</td>
+        <td>255.255.255.0</td>
+        <td>192.168.1.1</td>
+        <td>10.0.0.10</td>
+      </tr>
+      <tr>
+        <td>Switch0</td>
+        <td>—</td>
+        <td>— (camada 2)</td>
+        <td>—</td>
+        <td>—</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>Router0</td>
+        <td>GigabitEthernet0/0/0</td>
+        <td>192.168.1.1</td>
+        <td>255.255.255.0</td>
+        <td>—</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>Router0</td>
+        <td>GigabitEthernet0/0/1</td>
+        <td>10.0.0.1</td>
+        <td>255.255.255.0</td>
+        <td>—</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>Servidor (Maquina 01)</td>
+        <td>FastEthernet0</td>
+        <td>10.0.0.10</td>
+        <td>255.255.255.0</td>
+        <td>10.0.0.1</td>
+        <td>10.0.0.10</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>3. Serviços e observações</h2>
+  <ul class="obs">
+    <li><strong>DNS:</strong> registro <code>www.meuprojeto.com</code> &rarr; <code>10.0.0.10</code> (tipo A), hospedado no servidor.</li>
+    <li><strong>Servidor (Maquina 01):</strong> executa os serviços <strong>HTTP</strong> (site) e <strong>DNS</strong>.</li>
+    <li><strong>Roteamento:</strong> o Router0 interliga a LAN dos clientes (192.168.1.0/24) à rede do servidor (10.0.0.0/24).</li>
+    <li><strong>MAC do Router0:</strong> Gig0/0/0 = 00E0.A3D9.A101 &nbsp;|&nbsp; Gig0/0/1 = 00E0.A3D9.A102.</li>
+  </ul>
+
+  <p class="rodape">Documento gerado para o Projeto Integrador de Redes — Grupo 5 (VideCoders).</p>
+
+</body>
+</html>

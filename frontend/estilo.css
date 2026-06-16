@@ -111,6 +111,18 @@ section p {
 .header {
     display: flex;            /* Ativa o modo flexível no contêiner */
     justify-content: center;
+    align-items: center;      /* Alinha verticalmente a logo com o título */
     gap: 40px;  /* Alinha horizontalmente o botão no centro */
 
+}
+
+/* Logo da equipe no cabeçalho (selo branco) */
+.header img.logo-equipe {
+    width: 130px;
+    height: auto;
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 16px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+    margin-bottom: 0;
 }
