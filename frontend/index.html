@@ -3,15 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meu Portfólio na Rede</title>
+    <meta name="description" content="Portfólio da equipe VideCoders — Trabalho Integrador de Redes de Computadores. Conheça o time e as tecnologias utilizadas." />
+    <title>VideCoders — Portfólio de Redes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="estilo.css" />
   </head>
 
   <body>
     <header>
-    <div class="header">
-          <img src="imagens/logo.png" alt="Logo VideCoders" class="logo-equipe">
-      <h1>Equipe - VideCoders</h1>
+      <div class="header">
+        <img src="imagens/logo.png" alt="Logo VideCoders" class="logo-equipe" />
+        <h1>Equipe - VideCoders</h1>
       </div>
       <nav>
         <ul>
@@ -21,6 +25,7 @@
             <a
               href="https://docs.google.com/document/d/1IUUcVExnXhhR3hMnHfhNClPI9nwfB_rDX9sKaIwXqlk/edit?usp=sharing"
               target="_blank"
+              rel="noopener noreferrer"
               >Ler Documentação Técnica</a
             >
           </li>
@@ -29,8 +34,8 @@
     </header>
 
     <main>
-      <section id="sobre">
-        <h2 class="image">Sobre Nós</h2>
+      <section id="sobre" class="escondido">
+        <h2 class="titulo-secao">Sobre Nós</h2>
         <div class="container-sobre">
           <p>
             A união da nossa equipe foi o pilar central para o sucesso deste
@@ -43,38 +48,20 @@
           </p>
         </div>
 
-        <p>
-          Eric Ferraz: Responsável pela infraestrutura de rede, topologia no
-          Cisco Packet Tracer e configuração de roteamento.
-        </p>
-        <p>
-          Gabriel Antunes: Responsável pelo desenvolvimento Front-End (HTML,
-          CSS e JavaScript).
-        </p>
-        <p>
-          Lucas Sabino: Responsável pelo desenvolvimento Front-End (HTML, CSS e
-          JavaScript).
-        </p>
-        <p>
-          Francisco Maganhotto: Responsável pela elaboração e redação do artigo
-          técnico.
-        </p>
-        <p>
-          Wayron de Souza: Responsável pela elaboração e redação do artigo
-          técnico.
-        </p>
+        <!-- Grid renderizada dinamicamente via script.js -->
+        <div class="grid-equipe" id="grid-equipe"></div>
       </section>
 
-      <section id="habilidades">
-        <h2>Tecnologias usadas para o Projeto</h2>
+      <section id="habilidades" class="escondido">
+        <h2 class="titulo-secao">Tecnologias usadas para o Projeto</h2>
         <ul>
           <li>Redes de Computadores e Roteamento</li>
           <li>Desenvolvimento Front-End (HTML, CSS, JS)</li>
         </ul>
       </section>
 
-      <section id="interacao">
-        <h2>Área de Teste JavaScript</h2>
+      <section id="interacao" class="escondido">
+        <h2 class="titulo-secao">Área de Teste JavaScript</h2>
         <p>
           Clique nos botões abaixo para testar as funções que rodam no navegador
           do cliente:
@@ -84,13 +71,16 @@
           <button id="btn-tema">Ativar Modo Escuro</button>
         </div>
       </section>
-      <section id="documento-centralizado">
+
+      <section id="documento-centralizado" class="escondido">
         <a
           href="https://docs.google.com/document/d/1IUUcVExnXhhR3hMnHfhNClPI9nwfB_rDX9sKaIwXqlk/edit?usp=sharing"
           target="_blank"
+          rel="noopener noreferrer"
+          class="btn-link"
+          id="btn-documentacao"
+          >Visualizar Relatório PDF</a
         >
-          <button id="btn-documentacao">Visualizar Relatório PDF</button>
-        </a>
       </section>
     </main>
 
